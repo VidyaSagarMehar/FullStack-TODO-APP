@@ -8,6 +8,9 @@ const User = require('../models/user');
 exports.home = (req, res) => {
 	res.send('Hello from TODO app');
 };
+exports.dashboard = (req, res) => {
+	res.send('Hello from Dashboard app');
+};
 
 // POST route - Create todo
 exports.createTodo = async (req, res) => {
@@ -84,6 +87,7 @@ exports.deleteTodo = async (req, res) => {
 	}
 };
 
+// Register User route
 exports.register = async (req, res) => {
 	try {
 		// Destructuring the data
@@ -113,9 +117,9 @@ exports.register = async (req, res) => {
 				user_id: user._id,
 				email,
 			},
-			process.env.SECTER_KEY,
+			process.env.SECRET_KEY,
 			{
-				expiresIn: '24h',
+				expiresIn: '2h',
 			},
 		);
 		user.token = token;
@@ -126,6 +130,39 @@ exports.register = async (req, res) => {
 
 		// send token or send just success yes and redirect - choice
 		res.status(201).json(user);
+	} catch (error) {
+		console.log(error.message);
+	}
+};
+
+// Login user route
+exports.login = async (req, res) => {
+	try {
+		const { email, password } = req.body;
+
+		if (!(email && password)) {
+			res.status(400).send('Field is missing');
+		}
+
+		const user = await User.findOne({ email });
+
+		// compare password that user just send right now from body to the password which was given at the time of register
+		if (user && (await bcrypt.compare(password, user.password))) {
+			// creating token
+			const token = jwt.sign(
+				{ user_id: user._id, email },
+				process.env.SECRET_KEY,
+				{
+					expiresIn: '2h',
+				},
+			);
+
+			user.token = token;
+			user.password = undefined;
+			res.status(200).json(user);
+		}
+
+		res.status(400).send('email or password is incorrect');
 	} catch (error) {
 		console.log(error.message);
 	}

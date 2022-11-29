@@ -8,10 +8,6 @@ const User = require('../models/user');
 exports.home = (req, res) => {
 	res.send('Hello from TODO app');
 };
-exports.dashboard = (req, res) => {
-	res.send('Hello from Dashboard app');
-};
-
 // POST route - Create todo
 exports.createTodo = async (req, res) => {
 	try {

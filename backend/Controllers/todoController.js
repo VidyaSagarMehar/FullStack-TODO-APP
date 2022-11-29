@@ -1,6 +1,8 @@
 // Business Logic
-
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const Todo = require('../models/todoModel');
+const User = require('../models/user');
 
 // Home Route
 exports.home = (req, res) => {
@@ -79,5 +81,52 @@ exports.deleteTodo = async (req, res) => {
 			success: false,
 			message: error.message,
 		});
+	}
+};
+
+exports.register = async (req, res) => {
+	try {
+		// Destructuring the data
+		const { firstname, lastname, email, password } = req.body;
+
+		if (!(email && password && firstname && lastname)) {
+			res.status(400).send('All fields are required');
+		}
+
+		const existingUser = await User.findOne({ email });
+		if (existingUser) {
+			res.status(401).send('User already exists');
+		}
+
+		// Encrypt the password
+		const myEncPassword = await bcrypt.hash(password, 10);
+		const user = await User.create({
+			firstname,
+			lastname,
+			email: email.toLowerCase(),
+			password: myEncPassword,
+		});
+
+		// Token
+		const token = jwt.sign(
+			{
+				user_id: user._id,
+				email,
+			},
+			process.env.SECTER_KEY,
+			{
+				expiresIn: '24h',
+			},
+		);
+		user.token = token;
+		// update or not in db
+
+		// handle pwd situation
+		user.password = undefined;
+
+		// send token or send just success yes and redirect - choice
+		res.status(201).json(user);
+	} catch (error) {
+		console.log(error.message);
 	}
 };

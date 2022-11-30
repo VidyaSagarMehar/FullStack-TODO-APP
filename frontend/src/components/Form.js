@@ -33,10 +33,10 @@ export const Form = () => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
-				<section className="text-gray-600 body-font relative">
+				<section className="text-gray-300 body-font relative">
 					<div className="container px-5 py-8 mx-auto">
 						<div className="flex flex-col text-center w-full mb-6">
-							<h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+							<h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-300">
 								Create Todo
 							</h1>
 						</div>
@@ -46,7 +46,7 @@ export const Form = () => {
 									<div className="relative">
 										<label
 											htmlFor="title"
-											className="leading-7 text-sm text-gray-600"
+											className="leading-7 text-sm text-gray-300"
 										>
 											Title
 										</label>
@@ -64,7 +64,7 @@ export const Form = () => {
 									<div className="relative">
 										<label
 											htmlFor="tasks"
-											className="leading-7 text-sm text-gray-600"
+											className="leading-7 text-sm text-gray-300"
 										>
 											Tasks
 										</label>

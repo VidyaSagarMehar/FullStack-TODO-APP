@@ -1,13 +1,13 @@
 import React from 'react';
-
+import '../App.css';
 export const TodoList = () => {
 	return (
-		<div>
-			<section className="text-gray-600 body-font">
-				<div className="container px-5 py-24 mx-auto">
+		<div className="mx-auto error">
+			<section className="text-gray-300 body-font">
+				<div className="container py-12 mx-auto">
 					<div className="flex flex-col text-center w-full mb-8">
-						<h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
-							All Users
+						<h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-300">
+							All TODOs
 						</h1>
 					</div>
 					<div className="lg:w-2/3 w-full mx-auto overflow-auto">
@@ -15,10 +15,10 @@ export const TodoList = () => {
 							<thead>
 								<tr>
 									<th className="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">
-										Name
+										Todo Title
 									</th>
 									<th className="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-										Email
+										Todo Tasks
 									</th>
 									<th className="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
 										Edit
@@ -30,12 +30,12 @@ export const TodoList = () => {
 							</thead>
 							<tbody>
 								<tr>
-									<td className="px-4 py-3">One</td>
-									<td className="px-4 py-3">Two</td>
+									<td className="px-4 py-3">Title</td>
+									<td className="px-4 py-3">Tasks</td>
 									<td className="px-4 py-3">
 										<button className="hover:text-green-500">Edit</button>
 									</td>
-									<td className="px-4 py-3 text-lg text-gray-900">
+									<td className="px-4 py-3 text-lg text-gray-300">
 										<button className="hover:text-red-500">Delete</button>
 									</td>
 								</tr>

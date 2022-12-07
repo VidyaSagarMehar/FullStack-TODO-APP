@@ -21,6 +21,6 @@ router.get('/', home);
 router.post('/api/v1/todo', createTodo);
 router.get('/api/v1/todo', getTodo);
 router.put('/api/v1/todo/:id', editTodo);
-router.delete('/api/v1/todo/:id', auth, deleteTodo);
+router.delete('/api/v1/todo/:id', deleteTodo);
 
 module.exports = router;

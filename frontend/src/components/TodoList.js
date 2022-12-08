@@ -35,7 +35,7 @@ export const TodoList = () => {
 	};
 
 	const handleDelete = async (todoId) => {
-		const resp = await axios.delete(`/api/v1/todo/${todoId._id}`);
+		const resp = await axios.delete(`/api/v1/todo/${todoId}`);
 		console.log(resp);
 	};
 

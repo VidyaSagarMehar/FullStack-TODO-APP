@@ -8,7 +8,6 @@ const {
 	deleteTodo,
 	register,
 	login,
-	dashboard,
 } = require('../Controllers/todoController');
 const auth = require('../middleware/auth');
 

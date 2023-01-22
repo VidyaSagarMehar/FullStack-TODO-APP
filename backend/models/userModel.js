@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const userSchema = mongoose.Schema({
+const userSchema = new Schema({
 	firstname: {
 		type: String,
 		default: null,
@@ -18,6 +19,10 @@ const userSchema = mongoose.Schema({
 	},
 	token: {
 		type: String,
+	},
+	date: {
+		type: Date,
+		default: Date.now,
 	},
 });
 

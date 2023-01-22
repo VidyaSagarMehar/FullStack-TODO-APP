@@ -1,3 +1,4 @@
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
 const auth = (req, res, next) => {
@@ -13,15 +14,17 @@ const auth = (req, res, next) => {
 
 	try {
 		const decode = jwt.verify(token, process.env.SECRET_KEY);
-		console.log(decode);
-		// Here we can bring info from the DB
-		req.user = decode;
-		//
+
+		// console.log(decode.user.id);
+
+		req.user = decode.user;
+
+		next();
 	} catch (error) {
 		return res.status(401).send('Invalid token');
 	}
 
-	return next();
+	// return next();
 };
 
 module.exports = auth;

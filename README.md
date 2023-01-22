@@ -1,2 +1,2 @@
-# Fullstack-Todo-App
-Full stack TODO app
+# Fullstack-KeepNotes-App
+Full stack KeepNotes app

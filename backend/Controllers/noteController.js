@@ -1,12 +1,12 @@
 // Business Logic
-const Todo = require('../models/todoModel');
+const Note = require('../models/noteModel');
 
 // Home Route
 exports.home = (req, res) => {
-	res.send('Hello from TODO app');
+	res.send('Hello from KeepNotes app');
 };
-// POST route - Create todo
-exports.createTodo = async (req, res) => {
+// POST route - Create note
+exports.createNote = async (req, res) => {
 	// const user = await User.findById(userId).select('-password');
 	// res.status(200).json(user);
 
@@ -18,7 +18,7 @@ exports.createTodo = async (req, res) => {
 		}
 
 		// Inserting into Database
-		const todo = await Todo.create({
+		const note = await Note.create({
 			title,
 			tasks,
 			user: userId,
@@ -26,21 +26,21 @@ exports.createTodo = async (req, res) => {
 		// console.log(userId);
 		res.status(201).json({
 			success: true,
-			message: 'Todo Created Successfully',
-			todo,
+			message: 'Note Created Successfully',
+			note,
 		});
 	} catch (error) {
 		console.log(error.message);
 	}
 };
 
-// GET route - get todo
-exports.getTodo = async (req, res) => {
+// GET route - get note
+exports.getNote = async (req, res) => {
 	try {
-		const todos = await Todo.find({ user: req.user.id });
+		const notes = await Note.find({ user: req.user.id });
 		res.status(201).json({
 			success: true,
-			todos,
+			notes,
 		});
 	} catch (error) {
 		console.log(error.message);
@@ -51,13 +51,13 @@ exports.getTodo = async (req, res) => {
 	}
 };
 
-// PUT route - edit todo
-exports.editTodo = async (req, res) => {
+// PUT route - edit note
+exports.editNote = async (req, res) => {
 	try {
-		const todo = await Todo.findByIdAndUpdate(req.params.id, req.body);
+		const note = await Note.findByIdAndUpdate(req.params.id, req.body);
 		res.status(200).json({
 			success: true,
-			message: 'Todo updated successfully',
+			message: 'Note updated successfully',
 		});
 	} catch (error) {
 		console.log(error.message);
@@ -68,14 +68,14 @@ exports.editTodo = async (req, res) => {
 	}
 };
 
-// DELETE route - delete todo
-exports.deleteTodo = async (req, res) => {
+// DELETE route - delete note
+exports.deleteNote = async (req, res) => {
 	try {
-		const todoId = req.params.id;
-		const todo = await Todo.findByIdAndDelete(todoId);
+		const noteId = req.params.id;
+		const note = await Note.findByIdAndDelete(noteId);
 		res.status(201).json({
 			success: true,
-			message: 'Todo deleted successfully',
+			message: 'Note deleted successfully',
 		});
 	} catch (error) {
 		console.log(error.message);

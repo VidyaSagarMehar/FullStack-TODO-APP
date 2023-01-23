@@ -11,7 +11,7 @@ const Home = () => {
 			</div>
 
 			<main className="container" data-theme="dark">
-				<div class="grid row">
+				<div className="grid row">
 					<span>
 						<p>I'm a card!</p>
 					</span>

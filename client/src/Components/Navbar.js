@@ -6,9 +6,10 @@ function Navbar() {
 		<nav className="container-fluid" data-theme="dark">
 			<ul>
 				<li>
-					<a href="/" className="contrast" onclick="event.preventDefault()">
+					<Link href="/" className="contrast">
 						<strong>KeepNotes</strong>
-					</a>
+					</Link>
+					<Link to="/about">About</Link>
 				</li>
 			</ul>
 			<ul>

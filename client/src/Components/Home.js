@@ -1,5 +1,5 @@
-import React from 'react';
 import Form from './Form';
+import Notes from './Notes';
 
 const Home = () => {
 	return (
@@ -9,20 +9,7 @@ const Home = () => {
 			</div>
 
 			<main className="container" data-theme="dark">
-				<div className="grid row">
-					<span>
-						<p>I'm a card!</p>
-					</span>
-					<span>
-						<p>I'm a card!</p>
-					</span>
-					<span>
-						<p>I'm a card!</p>
-					</span>
-					<span>
-						<p>I'm a card!</p>
-					</span>
-				</div>
+				<Notes />
 			</main>
 		</div>
 	);

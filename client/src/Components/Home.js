@@ -1,11 +1,11 @@
-import Form from './Form';
+import AddForm from './AddForm';
 import Notes from './Notes';
 
 const Home = () => {
 	return (
 		<div>
 			<div className="hero" data-theme="dark">
-				<Form />
+				<AddForm />
 			</div>
 
 			<main className="container" data-theme="dark">

@@ -1,12 +1,10 @@
 import React from 'react';
 import Form from './Form';
-import Navbar from './Navbar';
 
 const Home = () => {
 	return (
 		<div>
 			<div className="hero" data-theme="dark">
-				<Navbar />
 				<Form />
 			</div>
 

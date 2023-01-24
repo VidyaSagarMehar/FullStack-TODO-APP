@@ -6,13 +6,13 @@ function Navbar() {
 		<nav className="container-fluid" data-theme="dark">
 			<ul>
 				<li>
-					<Link href="/" className="contrast">
+					<Link to="/" className="contrast">
 						<strong>KeepNotes</strong>
 					</Link>
 					<Link to="/about">About</Link>
 				</li>
 			</ul>
-			<ul>
+			{/* <ul>
 				<li>
 					<Link to="login" role="button" className="contrast outline">
 						Login
@@ -23,7 +23,7 @@ function Navbar() {
 						Signup
 					</Link>
 				</li>
-			</ul>
+			</ul> */}
 		</nav>
 	);
 }

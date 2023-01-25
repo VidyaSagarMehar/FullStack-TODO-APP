@@ -14,7 +14,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDYzNDc1MiwiZXhwIjoxNjc0NjQxOTUyfQ.1mQAMuxO2jcT92XZSpSMkurZG3BNYmJkFm-3WKvf8DI',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDY2ODE0OSwiZXhwIjoxNjc0Njc1MzQ5fQ.N7WxBrS3lNDROLmG8xC2CMruxcCdcVDqu9bYm87Ut5U',
 			},
 		});
 		// const json = response.json();
@@ -31,7 +31,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDYzNDc1MiwiZXhwIjoxNjc0NjQxOTUyfQ.1mQAMuxO2jcT92XZSpSMkurZG3BNYmJkFm-3WKvf8DI',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDY2ODE0OSwiZXhwIjoxNjc0Njc1MzQ5fQ.N7WxBrS3lNDROLmG8xC2CMruxcCdcVDqu9bYm87Ut5U',
 			},
 			body: JSON.stringify({ title, tasks }),
 		});
@@ -50,7 +50,20 @@ const NoteState = (props) => {
 	};
 
 	// Delete a Note
-	const deleteNote = (id) => {
+	const deleteNote = async (id) => {
+		// API call
+		const response = await fetch(`${host}/api/v1/note/${id}`, {
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization:
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDY2ODE0OSwiZXhwIjoxNjc0Njc1MzQ5fQ.N7WxBrS3lNDROLmG8xC2CMruxcCdcVDqu9bYm87Ut5U',
+			},
+		});
+		const json = response.json();
+		console.log(json);
+
+		// Logic to delete from client
 		const newNotes = notes.filter((note) => {
 			return note._id !== id;
 		});
@@ -65,7 +78,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDYzNDc1MiwiZXhwIjoxNjc0NjQxOTUyfQ.1mQAMuxO2jcT92XZSpSMkurZG3BNYmJkFm-3WKvf8DI',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDY2ODE0OSwiZXhwIjoxNjc0Njc1MzQ5fQ.N7WxBrS3lNDROLmG8xC2CMruxcCdcVDqu9bYm87Ut5U',
 			},
 			body: JSON.stringify({ title, tasks }),
 		});

@@ -10,7 +10,7 @@ const Notes = () => {
 	}, []);
 
 	return (
-		<div className="grid row ">
+		<div className="row my-3">
 			{notes.map((note) => {
 				return <Noteitem key={note._id} note={note} />;
 			})}

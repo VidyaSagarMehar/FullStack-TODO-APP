@@ -16,13 +16,13 @@ const Form = () => {
 	};
 
 	return (
-		<div className="container" data-theme="dark">
-			<hgroup>
+		<div className="container">
+			<div>
 				<h1>Add notes</h1>
 				<h2>Your notes are secured in the cloud</h2>
-			</hgroup>
+			</div>
 			<form onSubmit={handleSubmit}>
-				<div className="grid">
+				<div className="mb-3">
 					<input
 						type="text"
 						id="title"
@@ -30,8 +30,10 @@ const Form = () => {
 						placeholder="Title"
 						required
 						onChange={onChange}
+						className="form-control"
 					/>
-
+				</div>
+				<div className="mb-3">
 					<input
 						type="text"
 						id="tasks"
@@ -39,10 +41,12 @@ const Form = () => {
 						placeholder="Notes"
 						required
 						onChange={onChange}
+						className="form-control"
 					/>
 				</div>
-
-				<input type="submit" />
+				<button type="submit" className="btn btn-primary">
+					Submit
+				</button>
 			</form>
 		</div>
 	);

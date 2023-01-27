@@ -14,7 +14,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgyOTU0MSwiZXhwIjoxNjc0ODM2NzQxfQ.jN_Gamd0NJdyVqTj-ub-0HoDf8EWws6R_zlgrH-n3DQ',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgzODQxMywiZXhwIjoxNjc0ODQ1NjEzfQ.ucG9LnbwggHoRwY4Ez-z6TBxYGnzOV1zHov6_g41P_4',
 			},
 		});
 		// const json = response.json();
@@ -31,7 +31,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgyOTU0MSwiZXhwIjoxNjc0ODM2NzQxfQ.jN_Gamd0NJdyVqTj-ub-0HoDf8EWws6R_zlgrH-n3DQ',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgzODQxMywiZXhwIjoxNjc0ODQ1NjEzfQ.ucG9LnbwggHoRwY4Ez-z6TBxYGnzOV1zHov6_g41P_4',
 			},
 			body: JSON.stringify({ title, tasks }),
 		});
@@ -57,7 +57,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgyOTU0MSwiZXhwIjoxNjc0ODM2NzQxfQ.jN_Gamd0NJdyVqTj-ub-0HoDf8EWws6R_zlgrH-n3DQ',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgzODQxMywiZXhwIjoxNjc0ODQ1NjEzfQ.ucG9LnbwggHoRwY4Ez-z6TBxYGnzOV1zHov6_g41P_4',
 			},
 		});
 		const json = response.json();
@@ -78,20 +78,24 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgyOTU0MSwiZXhwIjoxNjc0ODM2NzQxfQ.jN_Gamd0NJdyVqTj-ub-0HoDf8EWws6R_zlgrH-n3DQ',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgzODQxMywiZXhwIjoxNjc0ODQ1NjEzfQ.ucG9LnbwggHoRwY4Ez-z6TBxYGnzOV1zHov6_g41P_4',
 			},
 			body: JSON.stringify({ title, tasks }),
 		});
-		const json = response.json();
+		const json = await response.json();
 
 		// Logic to edit in client
-		for (let index = 0; index < notes.length; index++) {
+		let newNotes = JSON.parse(JSON.stringify(notes));
+
+		for (let index = 0; index < newNotes.length; index++) {
 			const element = notes[index];
 			if (element._id === id) {
-				element.title = title;
-				element.tasks = tasks;
+				newNotes[index].title = title;
+				newNotes[index].tasks = tasks;
+				break;
 			}
 		}
+		setNotes(newNotes);
 	};
 
 	return (

@@ -6,14 +6,18 @@ import { BsTrash2, BsPencilSquare } from 'react-icons/bs';
 const Noteitem = (props) => {
 	const context = useContext(noteContext);
 	const { deleteNote } = context;
-	const { note } = props;
+	const { note, updateNote } = props;
 	return (
 		<div className="col-md-3 my-1">
 			<div className="card">
 				<div className="card-body">
 					<div className="">
 						<div className="d-flex inline align-items-center justify-content-between">
-							<BsPencilSquare />
+							<BsPencilSquare
+								onClick={() => {
+									updateNote(note);
+								}}
+							/>
 							<BsTrash2
 								onClick={() => {
 									deleteNote(note._id);

@@ -25,10 +25,11 @@ const Signup = () => {
 			body: JSON.stringify({ firstname, lastname, email, password }),
 		});
 		const json = await response.json();
-		console.log(json);
+		// console.log(json);
 		if (json.success) {
 			// Save the auth token and redirect
-			localStorage.setItem('token', 'json.token');
+			const authToken = json.user.token;
+			localStorage.setItem('token', authToken);
 			history.push('/');
 		} else {
 			console.log('Invalid inputs');

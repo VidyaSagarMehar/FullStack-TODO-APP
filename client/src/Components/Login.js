@@ -20,10 +20,10 @@ const Login = () => {
 			}),
 		});
 		const json = await response.json();
-		console.log(json);
 		if (json.success) {
 			// Save the auth token and redirect
-			localStorage.setItem('token', 'json.token');
+			const authToken = json.user.token;
+			localStorage.setItem('token', authToken);
 			history.push('/');
 		} else {
 			alert('invalid Credentials');

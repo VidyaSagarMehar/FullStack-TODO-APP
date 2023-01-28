@@ -9,6 +9,8 @@ const Form = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		addNote(note.title, note.tasks);
+		// After adding a note fields will be empty
+		setNote({ title: '', tasks: '' });
 	};
 
 	const onChange = (e) => {
@@ -27,6 +29,7 @@ const Form = () => {
 						type="text"
 						id="title"
 						name="title"
+						value={note.title}
 						placeholder="Title"
 						required
 						onChange={onChange}
@@ -38,6 +41,7 @@ const Form = () => {
 						type="text"
 						id="tasks"
 						name="tasks"
+						value={note.tasks}
 						placeholder="Notes"
 						required
 						onChange={onChange}

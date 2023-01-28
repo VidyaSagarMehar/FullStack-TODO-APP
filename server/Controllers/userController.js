@@ -42,7 +42,7 @@ exports.register = async (req, res) => {
 		// handle pwd situation
 		user.password = undefined;
 
-		// send token or send just success yes and redirect - choice
+		// send token or send just success yes and redirect
 		res.status(201).json({
 			success: true,
 			message: 'User Signed up Successfully',

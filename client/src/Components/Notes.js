@@ -1,12 +1,18 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import noteContext from '../Context/noteContext';
 import Noteitem from './Noteitem';
+import { useHistory } from 'react-router-dom';
 
 const Notes = () => {
 	const context = useContext(noteContext);
+	let history = useHistory();
 	const { notes, getNotes, editNote } = context;
 	useEffect(() => {
-		getNotes();
+		if (localStorage.getItem('token')) {
+			getNotes();
+		} else {
+			history.push('/login');
+		}
 	}, []);
 
 	// to updata a note

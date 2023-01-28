@@ -43,7 +43,11 @@ exports.register = async (req, res) => {
 		user.password = undefined;
 
 		// send token or send just success yes and redirect - choice
-		res.status(201).json(user);
+		res.status(201).json({
+			success: true,
+			message: 'User Signed up Successfully',
+			user,
+		});
 	} catch (error) {
 		console.log(error.message);
 	}
@@ -74,7 +78,11 @@ exports.login = async (req, res) => {
 
 			user.token = token;
 			user.password = undefined;
-			res.status(200).json(user);
+			res.status(200).json({
+				success: true,
+				message: 'User logged in Successfully',
+				user,
+			});
 		}
 
 		res.status(400).send('email or password is incorrect');
@@ -88,7 +96,11 @@ exports.getuser = async (req, res) => {
 	try {
 		userId = req.user.id;
 		const user = await User.findById(userId).select('-password');
-		res.status(200).json(user);
+		res.status(200).json({
+			success: true,
+			message: 'User fetched Successfully',
+			user,
+		});
 		// console.log(userId);
 	} catch (error) {
 		console.log(error.message);

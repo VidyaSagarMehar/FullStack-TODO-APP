@@ -14,12 +14,10 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgzODQxMywiZXhwIjoxNjc0ODQ1NjEzfQ.ucG9LnbwggHoRwY4Ez-z6TBxYGnzOV1zHov6_g41P_4',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkwODY5MiwiZXhwIjoxNjc0OTE1ODkyfQ.Fk5ayV_R5wEl2Az4Pinz7t_rsHgF1kuehlXp6bEgck8',
 			},
 		});
-		// const json = response.json();
 		const json = await response.json();
-		console.log(json.notes);
 		setNotes(json.notes);
 	};
 
@@ -31,22 +29,14 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgzODQxMywiZXhwIjoxNjc0ODQ1NjEzfQ.ucG9LnbwggHoRwY4Ez-z6TBxYGnzOV1zHov6_g41P_4',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkwODY5MiwiZXhwIjoxNjc0OTE1ODkyfQ.Fk5ayV_R5wEl2Az4Pinz7t_rsHgF1kuehlXp6bEgck8',
 			},
 			body: JSON.stringify({ title, tasks }),
-		});
-		// const json = response.json();
-
-		// Logic to add from client
-		const note = {
-			_id: '63cd61d8e4cf17a762bs90b3',
-			title: title,
-			tasks: tasks,
-			user: '63cd4e0113df6619ce9a3dd4',
-			date: '2023-01-22T16:18:32.471Z',
-			__v: 0,
-		};
-		setNotes(notes.concat(note));
+		})
+			.then((response) => response.json())
+			.then((responseJson) => {
+				setNotes(notes.concat(responseJson.note));
+			});
 	};
 
 	// Delete a Note
@@ -57,11 +47,10 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgzODQxMywiZXhwIjoxNjc0ODQ1NjEzfQ.ucG9LnbwggHoRwY4Ez-z6TBxYGnzOV1zHov6_g41P_4',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkwODY5MiwiZXhwIjoxNjc0OTE1ODkyfQ.Fk5ayV_R5wEl2Az4Pinz7t_rsHgF1kuehlXp6bEgck8',
 			},
 		});
-		const json = response.json();
-		console.log(json);
+		const json = await response.json();
 
 		// Logic to delete from client
 		const newNotes = notes.filter((note) => {
@@ -78,7 +67,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDgzODQxMywiZXhwIjoxNjc0ODQ1NjEzfQ.ucG9LnbwggHoRwY4Ez-z6TBxYGnzOV1zHov6_g41P_4',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkwODY5MiwiZXhwIjoxNjc0OTE1ODkyfQ.Fk5ayV_R5wEl2Az4Pinz7t_rsHgF1kuehlXp6bEgck8',
 			},
 			body: JSON.stringify({ title, tasks }),
 		});

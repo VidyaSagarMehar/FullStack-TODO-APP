@@ -14,7 +14,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkwODY5MiwiZXhwIjoxNjc0OTE1ODkyfQ.Fk5ayV_R5wEl2Az4Pinz7t_rsHgF1kuehlXp6bEgck8',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkyNDIxNywiZXhwIjoxNjc0OTMxNDE3fQ.Xs6zO45s5WJAY0CAFhDA4RYBEBUCJ3iELOiiGi2juQ0',
 			},
 		});
 		const json = await response.json();
@@ -29,7 +29,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkwODY5MiwiZXhwIjoxNjc0OTE1ODkyfQ.Fk5ayV_R5wEl2Az4Pinz7t_rsHgF1kuehlXp6bEgck8',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkyNDIxNywiZXhwIjoxNjc0OTMxNDE3fQ.Xs6zO45s5WJAY0CAFhDA4RYBEBUCJ3iELOiiGi2juQ0',
 			},
 			body: JSON.stringify({ title, tasks }),
 		})
@@ -47,7 +47,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkwODY5MiwiZXhwIjoxNjc0OTE1ODkyfQ.Fk5ayV_R5wEl2Az4Pinz7t_rsHgF1kuehlXp6bEgck8',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkyNDIxNywiZXhwIjoxNjc0OTMxNDE3fQ.Xs6zO45s5WJAY0CAFhDA4RYBEBUCJ3iELOiiGi2juQ0',
 			},
 		});
 		const json = await response.json();
@@ -67,7 +67,7 @@ const NoteState = (props) => {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization:
-					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkwODY5MiwiZXhwIjoxNjc0OTE1ODkyfQ.Fk5ayV_R5wEl2Az4Pinz7t_rsHgF1kuehlXp6bEgck8',
+					'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZDRlMDExM2RmNjYxOWNlOWEzZGQ0In0sImlhdCI6MTY3NDkyNDIxNywiZXhwIjoxNjc0OTMxNDE3fQ.Xs6zO45s5WJAY0CAFhDA4RYBEBUCJ3iELOiiGi2juQ0',
 			},
 			body: JSON.stringify({ title, tasks }),
 		});

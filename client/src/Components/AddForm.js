@@ -23,6 +23,7 @@ const Form = () => {
 		setNote({ title: '', tasks: '' });
 		// setting the progress bar
 		setProgress(progress + 100);
+		// Toast Emitter
 		toast.success('note added!', {
 			position: 'bottom-right',
 			autoClose: 1000,
@@ -62,8 +63,8 @@ const Form = () => {
 				onLoaderFinished={() => setProgress(0)}
 			/>
 			<div>
-				<h1>Add notes</h1>
-				<h2>Your notes are secured in the cloud</h2>
+				<h2>Add notes</h2>
+				<h5>Your notes are secured in the cloud</h5>
 			</div>
 			<form
 				onSubmit={handleSubmit}

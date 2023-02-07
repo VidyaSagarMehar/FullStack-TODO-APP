@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import LoadingBar from 'react-top-loading-bar';
 import '../App.css';
 
 const Signup = () => {
+	// setting the progress initial to Zero
+	const [progress, setProgress] = useState(0);
 	const [credential, setCredential] = useState({
 		firstname: '',
 		lastname: '',
@@ -13,6 +16,8 @@ const Signup = () => {
 	let history = useHistory();
 
 	const handleSignup = async (e) => {
+		// setting the progress bar
+		setProgress(progress + 100);
 		e.preventDefault();
 
 		// get info using destructuring
@@ -44,6 +49,13 @@ const Signup = () => {
 	};
 	return (
 		<section className="h-100 d-flex my-5 align-items-center justify-content-center text-center text-light">
+			{/* Progress Bar */}
+			<LoadingBar
+				color="#0B5ED7"
+				height={4}
+				progress={progress}
+				onLoaderFinished={() => setProgress(0)}
+			/>
 			<div className="">
 				<div className="row g-16">
 					<div className="col-12 col-md-6">

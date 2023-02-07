@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import '../App.css';
 
 function Navbar() {
 	let history = useHistory();
@@ -12,7 +13,7 @@ function Navbar() {
 		window.location.reload(true);
 	};
 	return (
-		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav className="navbar navbar-expand-lg navbar-dark ">
 			<div className="container-fluid">
 				<Link className="navbar-brand" to="/">
 					KeepNotes

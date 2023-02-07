@@ -36,6 +36,9 @@
 		transform: rotate(360deg);
 	}
 }
+.navbar {
+	background-image: linear-gradient(to left, #091634 0%, black 150%);
+}
 
 .submit {
 	margin-top: -15px;

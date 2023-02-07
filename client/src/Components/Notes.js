@@ -30,7 +30,7 @@ const Notes = () => {
 		});
 	};
 
-	// for form to edit
+	// form to edit
 
 	const handleSubmit = (e) => {
 		e.preventDefault();

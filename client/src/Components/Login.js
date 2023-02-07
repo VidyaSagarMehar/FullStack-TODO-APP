@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import LoadingBar from 'react-top-loading-bar';
 import '../App.css';
 
 const Login = () => {
+	// setting the progress initial to Zero
+	const [progress, setProgress] = useState(0);
 	const [credential, setCredential] = useState({ email: '', password: '' });
 	// useHistoruy hook to redirect
 	let history = useHistory();
 
 	const handleLogin = async (e) => {
+		// setting the progress bar
+		setProgress(progress + 100);
 		e.preventDefault();
 
 		const response = await fetch('http://localhost:4000/login', {
@@ -29,6 +34,8 @@ const Login = () => {
 		} else {
 			alert('invalid Credentials');
 		}
+
+		// reload the navbar to show logout
 		window.location.reload(true);
 	};
 
@@ -38,6 +45,13 @@ const Login = () => {
 
 	return (
 		<section className="h-100 d-flex my-5 align-items-center justify-content-center text-center text-light">
+			{/* Progress Bar */}
+			<LoadingBar
+				color="#0B5ED7"
+				height={4}
+				progress={progress}
+				onLoaderFinished={() => setProgress(0)}
+			/>
 			<div className="row g-16 ">
 				<div className="col-12 col-md-6">
 					<div className="">

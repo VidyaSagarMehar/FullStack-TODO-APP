@@ -32,23 +32,18 @@ function Navbar() {
 								Home
 							</Link>
 						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="/about">
-								About
-							</Link>
-						</li>
 					</ul>
 					{!localStorage.getItem('token') ? (
 						<form className="d-flex" role="search">
 							<Link
-								className="btn btn-outline-success mx-2"
+								className="btn btn-outline-primary mx-2"
 								to="/login"
 								role="button"
 							>
 								Login
 							</Link>
 							<Link
-								className="btn btn-outline-success mx-2"
+								className="btn btn-outline-primary mx-2"
 								to="/signup"
 								role="button"
 							>
@@ -58,7 +53,7 @@ function Navbar() {
 					) : (
 						<button
 							onClick={handleLogout}
-							className="btn btn-outline-success mx-2"
+							className="btn btn-outline-primary mx-2"
 							role="button"
 						>
 							Logout

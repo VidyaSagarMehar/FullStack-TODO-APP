@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import noteContext from '../Context/noteContext';
+import '../App.css';
 
 import { BsTrash2, BsPencilSquare } from 'react-icons/bs';
 
@@ -8,7 +9,7 @@ const Noteitem = (props) => {
 	const { deleteNote } = context;
 	const { note, updateNote } = props;
 	return (
-		<div className="col-md-3 my-1">
+		<div className="noteItem col-md-3 my-1">
 			<div className="card">
 				<div className="card-body">
 					<div className="">

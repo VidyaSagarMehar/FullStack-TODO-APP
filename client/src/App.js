@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NoteState from './Context/NoteState';
 import Navbar from './Components/Navbar.js';
 import Home from './Components/Home';
-import About from './Components/About';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 
@@ -17,9 +16,6 @@ function App() {
 					<Switch>
 						<Route exact path="/">
 							<Home />
-						</Route>
-						<Route exact path="/about">
-							<About />
 						</Route>
 						<Route exact path="/login">
 							<Login />

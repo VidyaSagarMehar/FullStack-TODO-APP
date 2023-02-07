@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import noteContext from '../Context/noteContext';
+import '../App.css';
 
 const Form = () => {
 	const context = useContext(noteContext);
@@ -18,13 +19,16 @@ const Form = () => {
 	};
 
 	return (
-		<div className="container">
+		<div className="container text-light my-5">
 			<div>
 				<h1>Add notes</h1>
 				<h2>Your notes are secured in the cloud</h2>
 			</div>
-			<form onSubmit={handleSubmit}>
-				<div className="mb-3">
+			<form
+				onSubmit={handleSubmit}
+				className="form-group d-flex align-items-center my-4"
+			>
+				<div className="mb-3 ">
 					<input
 						type="text"
 						id="title"
@@ -36,7 +40,7 @@ const Form = () => {
 						className="form-control"
 					/>
 				</div>
-				<div className="mb-3">
+				<div className="mb-3 ">
 					<input
 						type="text"
 						id="tasks"
@@ -45,10 +49,19 @@ const Form = () => {
 						placeholder="Notes"
 						required
 						onChange={onChange}
-						className="form-control"
+						className="form-control mx-4"
 					/>
 				</div>
-				<button type="submit" className="btn btn-primary">
+				<button
+					type="submit"
+					className=" submit btn btn-primary mx-5"
+					disabled={
+						note.title.length < 5 ||
+						note.tasks.length < 5 ||
+						note.title.trim().length === 0 ||
+						note.tasks.trim().length === 0
+					}
+				>
 					Submit
 				</button>
 			</form>

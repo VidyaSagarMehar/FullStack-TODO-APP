@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import noteContext from '../Context/noteContext';
 import LoadingBar from 'react-top-loading-bar';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
 
 const Form = () => {
@@ -21,6 +23,16 @@ const Form = () => {
 		setNote({ title: '', tasks: '' });
 		// setting the progress bar
 		setProgress(progress + 100);
+		toast.success('note added!', {
+			position: 'bottom-right',
+			autoClose: 1000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: 'dark',
+		});
 	};
 
 	const onChange = (e) => {
@@ -31,6 +43,18 @@ const Form = () => {
 
 	return (
 		<div className="container text-light my-5">
+			<ToastContainer
+				position="bottom-right"
+				autoClose={1000}
+				hideProgressBar={false}
+				newestOnTop
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="dark"
+			/>
 			<LoadingBar
 				color="#0B5ED7"
 				height={4}

@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import noteContext from '../Context/noteContext';
 import Noteitem from './Noteitem';
 import { useHistory } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Notes = () => {
 	const context = useContext(noteContext);
@@ -36,6 +38,17 @@ const Notes = () => {
 		e.preventDefault();
 		editNote(note.id, note.etitle, note.etasks);
 		refClose.current.click();
+		// Toast Emitter
+		toast.success('note updated!', {
+			position: 'bottom-right',
+			autoClose: 1000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: 'dark',
+		});
 	};
 
 	const onChange = (e) => {
@@ -44,6 +57,18 @@ const Notes = () => {
 
 	return (
 		<>
+			<ToastContainer
+				position="bottom-right"
+				autoClose={1000}
+				hideProgressBar={false}
+				newestOnTop
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="dark"
+			/>
 			{/*  Button trigger modal */}
 			<button
 				ref={ref}

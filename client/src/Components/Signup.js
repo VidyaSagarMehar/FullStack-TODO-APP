@@ -35,6 +35,8 @@ const Signup = () => {
 		} else {
 			console.log('Invalid inputs');
 		}
+		// reload the navbar to show logout
+		window.location.reload(true);
 	};
 
 	const onChange = (e) => {

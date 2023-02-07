@@ -7,6 +7,9 @@ function Navbar() {
 	const handleLogout = () => {
 		localStorage.removeItem('token');
 		history.push('/login');
+
+		// reload the navbar to show logout
+		window.location.reload(true);
 	};
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">

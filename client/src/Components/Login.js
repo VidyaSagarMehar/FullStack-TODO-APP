@@ -29,6 +29,7 @@ const Login = () => {
 		} else {
 			alert('invalid Credentials');
 		}
+		window.location.reload(true);
 	};
 
 	const onChange = (e) => {

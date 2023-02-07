@@ -13,17 +13,19 @@ function App() {
 			<NoteState>
 				<Router>
 					<Navbar />
-					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/login">
-							<Login />
-						</Route>
-						<Route exact path="/signup">
-							<Signup />
-						</Route>
-					</Switch>
+					<div className="container">
+						<Switch>
+							<Route exact path="/">
+								<Home />
+							</Route>
+							<Route exact path="/login">
+								<Login />
+							</Route>
+							<Route exact path="/signup">
+								<Signup />
+							</Route>
+						</Switch>
+					</div>
 				</Router>
 			</NoteState>
 		</>

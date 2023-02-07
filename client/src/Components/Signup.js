@@ -14,7 +14,6 @@ const Signup = () => {
 	});
 
 	let history = useHistory();
-
 	const handleSignup = async (e) => {
 		// setting the progress bar
 		setProgress(progress + 100);
@@ -69,7 +68,6 @@ const Signup = () => {
 										<div className="form-group">
 											<input
 												onChange={onChange}
-												// value={}
 												name="firstname"
 												className="bg-white text-dark px-5 py-4 w-100 border rounded-1"
 												id="signUpInput1-1"
@@ -83,7 +81,6 @@ const Signup = () => {
 										<div className="form-group">
 											<input
 												onChange={onChange}
-												// value={}
 												name="lastname"
 												className="bg-white text-dark px-5 py-4 w-100 border rounded-1"
 												id="signUpInput1-2"
@@ -97,7 +94,6 @@ const Signup = () => {
 										<div className="form-group">
 											<input
 												onChange={onChange}
-												// value={}
 												name="email"
 												className="bg-white text-dark px-5 py-4 w-100 border rounded-1"
 												id="signUpInput1-3"
@@ -111,7 +107,6 @@ const Signup = () => {
 										<div className="form-group">
 											<input
 												onChange={onChange}
-												// value={}
 												name="password"
 												className="bg-white text-dark px-5 py-4 w-100 border rounded-1"
 												id="signUpInput1-4"

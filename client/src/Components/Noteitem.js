@@ -3,7 +3,6 @@ import noteContext from '../Context/noteContext';
 import '../App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import { BsTrash2, BsPencilSquare } from 'react-icons/bs';
 
 const Noteitem = (props) => {

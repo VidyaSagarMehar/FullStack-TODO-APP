@@ -7,9 +7,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Notes = () => {
 	const context = useContext(noteContext);
+	// useHistory to redirect user
 	let history = useHistory();
 	const { notes, getNotes, editNote } = context;
 	useEffect(() => {
+		// if valid token - show notes or redirect to login
 		if (localStorage.getItem('token')) {
 			getNotes();
 		} else {
@@ -80,7 +82,7 @@ const Notes = () => {
 				Launch demo modal
 			</button>
 
-			{/*  Modal */}
+			{/*  Edit Modal */}
 			<div
 				className="modal fade"
 				id="exampleModal"

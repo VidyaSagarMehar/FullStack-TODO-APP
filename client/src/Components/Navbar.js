@@ -37,6 +37,7 @@ function Navbar() {
 							</Link>
 						</li>
 					</ul>
+					{/* Show logout if user is logged in or show login and signup button */}
 					{!localStorage.getItem('token') ? (
 						<form className="d-flex" role="search">
 							<Link

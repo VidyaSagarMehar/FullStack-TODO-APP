@@ -1,37 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../App.css';
 import { FaUserCircle } from 'react-icons/fa';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Profile from './Profile';
 
 function Navbar() {
-	const [userName, setUserName] = useState('');
-	const [userEmail, setUserEmail] = useState('');
-
-	useEffect(() => {
-		const myRequest = new Request('http://localhost:4000/getuser', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				Authorization: localStorage.getItem('token').toString(),
-			},
-		});
-		fetch(myRequest)
-			.then((response) => {
-				return response.json();
-			})
-			.then((data) => {
-				setUserName(data.user.firstname + ' ' + data.user.lastname);
-				setUserEmail(data.user.email);
-				// console.log(data.user.email);
-			})
-			.catch((err) => console.log(err));
-	}, []);
-
 	// Offcanvas for user profile
 	function UserProfile() {
 		const [show, setShow] = useState(false);
-
 		const handleClose = () => setShow(false);
 		const handleShow = () => setShow(true);
 
@@ -52,16 +29,19 @@ function Navbar() {
 					className="offCanvas text-white"
 				>
 					<Offcanvas.Header closeButton>
-						<FaUserCircle
-							role="button"
-							size="2rem"
-							className="mx-2 "
-							color="white"
-							onClick={handleShow}
-						/>
-						<Offcanvas.Title>{userEmail}</Offcanvas.Title>
+						<Offcanvas.Title>
+							<FaUserCircle
+								role="button"
+								size="2rem"
+								className="mx-2 "
+								color="white"
+								onClick={handleShow}
+							/>
+						</Offcanvas.Title>
 					</Offcanvas.Header>
-					<Offcanvas.Body className="text-center">{userName}</Offcanvas.Body>
+					<Offcanvas.Body className="text-center">
+						<Profile />
+					</Offcanvas.Body>
 				</Offcanvas>
 			</>
 		);
@@ -120,16 +100,16 @@ function Navbar() {
 							</Link>
 						</form>
 					) : (
-						<button
-							onClick={handleLogout}
-							className="btn btn-outline-primary mx-2"
-							role="button"
-						>
-							Logout
-						</button>
+						<>
+							<button
+								onClick={handleLogout}
+								className="btn btn-outline-primary mx-2"
+							>
+								Logout
+							</button>
+							<UserProfile />
+						</>
 					)}
-
-					<UserProfile />
 				</div>
 			</div>
 		</nav>

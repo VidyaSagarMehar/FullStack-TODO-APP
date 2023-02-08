@@ -6,7 +6,7 @@ function Profile() {
 
 	useEffect(() => {
 		// Getting user profile
-		const host = 'http://localhost:4000';
+		const host = 'keepnotes-app-mern-production.up.railway.app';
 
 		const myRequest = new Request(`${host}/getuser`, {
 			method: 'POST',

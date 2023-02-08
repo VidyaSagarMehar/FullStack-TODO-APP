@@ -22,13 +22,16 @@ const Signup = () => {
 		// get info using destructuring
 		const { firstname, lastname, email, password } = credential;
 
-		const response = await fetch('http://localhost:4000/register', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
+		const response = await fetch(
+			`https://keepnotes-app-mern-production.up.railway.app/register`,
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ firstname, lastname, email, password }),
 			},
-			body: JSON.stringify({ firstname, lastname, email, password }),
-		});
+		);
 		const json = await response.json();
 		// console.log(json);
 		if (json.success) {

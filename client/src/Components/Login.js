@@ -15,16 +15,19 @@ const Login = () => {
 		setProgress(progress + 100);
 		e.preventDefault();
 
-		const response = await fetch('http://localhost:4000/login', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
+		const response = await fetch(
+			'https://keepnotes-app-mern-production.up.railway.app/register',
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					email: credential.email,
+					password: credential.password,
+				}),
 			},
-			body: JSON.stringify({
-				email: credential.email,
-				password: credential.password,
-			}),
-		});
+		);
 		const json = await response.json();
 		if (json.success) {
 			// Save the auth token and redirect

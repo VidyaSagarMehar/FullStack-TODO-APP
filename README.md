@@ -58,11 +58,19 @@ or
 
 
 ## Screenshots
+#### Login page
+![Screenshot_20230208_095215](https://user-images.githubusercontent.com/92782806/217590362-9e740217-a81e-4c6a-960a-34d959528ec5.png)
 
-![Screenshot 1]()
-![Screenshot 2]()
-![Screenshot 3]()
-![Screenshot 4]()
+#### Signup page
+![Screenshot_20230208_095428](https://user-images.githubusercontent.com/92782806/217590634-718f2670-9873-495c-a44c-de84dc03ea43.png)
+
+#### Home page
+![Screenshot_20230208_095333](https://user-images.githubusercontent.com/92782806/217590819-2913dbe5-c1e3-46d8-981c-e81dcea1d8e6.png)
+
+#### Home with user profile on offcanvas
+![Screenshot_20230208_095415](https://user-images.githubusercontent.com/92782806/217590958-04ee9450-f77e-4548-9093-8038ac75a204.png)
+
+
 
 
 

@@ -16,7 +16,7 @@ const Login = () => {
 		e.preventDefault();
 
 		const response = await fetch(
-			'keepnotes-app-mern-production.up.railway.app/login',
+			'https://keepnotes-app-mern-production.up.railway.app/register',
 			{
 				method: 'POST',
 				headers: {

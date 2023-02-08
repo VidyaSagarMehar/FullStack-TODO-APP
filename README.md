@@ -68,7 +68,7 @@ or
 ![Screenshot_20230208_095333](https://user-images.githubusercontent.com/92782806/217590819-2913dbe5-c1e3-46d8-981c-e81dcea1d8e6.png)
 
 #### Home with user profile on offcanvas
-![Screenshot_20230208_095415](https://user-images.githubusercontent.com/92782806/217590958-04ee9450-f77e-4548-9093-8038ac75a204.png)
+![Screenshot_20230208_095415](https://user-images.githubusercontent.com/92782806/217620133-7b9c7676-5587-4dfb-9b85-94fec51ed189.png)
 
 
 

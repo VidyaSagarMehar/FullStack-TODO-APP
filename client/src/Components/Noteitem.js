@@ -3,11 +3,11 @@ import noteContext from '../Context/noteContext';
 import '../App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import { BsTrash2, BsPencilSquare } from 'react-icons/bs';
 
 const Noteitem = (props) => {
 	const notify = () => {
-		// Toast Emitter
 		toast.error('note deleted!', {
 			position: 'bottom-right',
 			autoClose: 1000,
@@ -41,11 +41,13 @@ const Noteitem = (props) => {
 					<div className="">
 						<div className="d-flex inline align-items-center justify-content-between">
 							<BsPencilSquare
+								role="button"
 								onClick={() => {
 									updateNote(note);
 								}}
 							/>
 							<BsTrash2
+								role="button"
 								onClick={() => {
 									deleteNote(note._id);
 									notify();

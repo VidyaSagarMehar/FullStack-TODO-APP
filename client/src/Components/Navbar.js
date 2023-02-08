@@ -1,8 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../App.css';
+import { FaUserCircle } from 'react-icons/fa';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function Navbar() {
+	// Offcanvas for user profile
+	function UserProfile() {
+		const [show, setShow] = useState(false);
+
+		const handleClose = () => setShow(false);
+		const handleShow = () => setShow(true);
+
+		return (
+			<>
+				<FaUserCircle
+					role="button"
+					size="2rem"
+					className="mx-2 "
+					color="white"
+					onClick={handleShow}
+				/>
+
+				<Offcanvas
+					show={show}
+					onHide={handleClose}
+					placement="end"
+					className="offCanvas text-white"
+				>
+					<Offcanvas.Header closeButton>
+						<Offcanvas.Title>Offcanvas</Offcanvas.Title>
+					</Offcanvas.Header>
+					<Offcanvas.Body>
+						Some text as placeholder. In real life you can have the elements you
+						have chosen. Like, text, images, lists, etc.
+					</Offcanvas.Body>
+				</Offcanvas>
+			</>
+		);
+	}
+
 	let history = useHistory();
 
 	const handleLogout = () => {
@@ -64,6 +101,8 @@ function Navbar() {
 							Logout
 						</button>
 					)}
+
+					<UserProfile />
 				</div>
 			</div>
 		</nav>

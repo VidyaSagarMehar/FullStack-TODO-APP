@@ -1,3 +1,5 @@
+>> # Sorry for inconvenience, My railways backend plan is exhausted so app will not work, I need a day or two to make the app running 🙏🙏🙏
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 # Hi, I'm [Vidya Sagar Mehar](https://vidya-sagar-portfolio.netlify.app/) ! 👋
@@ -58,11 +60,19 @@ or
 
 
 ## Screenshots
+#### Login page
+![Screenshot_20230208_095215](https://user-images.githubusercontent.com/92782806/217590362-9e740217-a81e-4c6a-960a-34d959528ec5.png)
 
-![Screenshot 1]()
-![Screenshot 2]()
-![Screenshot 3]()
-![Screenshot 4]()
+#### Signup page
+![Screenshot_20230208_095428](https://user-images.githubusercontent.com/92782806/217590634-718f2670-9873-495c-a44c-de84dc03ea43.png)
+
+#### Home page
+![Screenshot_20230208_095333](https://user-images.githubusercontent.com/92782806/217590819-2913dbe5-c1e3-46d8-981c-e81dcea1d8e6.png)
+
+#### Home with user profile on offcanvas
+![Screenshot_20230208_095415](https://user-images.githubusercontent.com/92782806/217620133-7b9c7676-5587-4dfb-9b85-94fec51ed189.png)
+
+
 
 
 

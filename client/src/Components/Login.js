@@ -16,7 +16,7 @@ const Login = () => {
 		e.preventDefault();
 
 		const response = await fetch(
-			'https://keep-notes-app-mern-j5qk.vercel.app/',
+			'https://keep-notes-app-mern-j5qk.vercel.app/login',
 			{
 				method: 'POST',
 				headers: {

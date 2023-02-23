@@ -9,7 +9,7 @@ function Profile() {
 		// const host = 'https://keepnotes-app-mern-production.up.railway.app';
 
 		const myRequest = new Request(
-			`https://keep-notes-app-mern-j5qk.vercel.app/`,
+			`https://keep-notes-app-mern-j5qk.vercel.app/getuser`,
 			{
 				method: 'POST',
 				headers: {

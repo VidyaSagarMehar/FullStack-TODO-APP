@@ -23,7 +23,7 @@ const Signup = () => {
 		const { firstname, lastname, email, password } = credential;
 
 		const response = await fetch(
-			`https://keepnotes-app-mern-production.up.railway.app/register`,
+			`https://keep-notes-app-mern-j5qk.vercel.app/`,
 			{
 				method: 'POST',
 				headers: {

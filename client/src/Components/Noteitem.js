@@ -73,8 +73,8 @@ const Noteitem = (props) => {
 						<p className="card-text">{note.tasks}</p>
 					</div>
 					<span className="fs-6 fw-lighter d-flex mt-3 justify-content-between">
-						<p className="">{formattedDate}</p>
-						<p className="">{formattedTime}</p>
+						<p>{formattedDate}</p>
+						<p>{formattedTime}</p>
 					</span>
 				</div>
 			</div>
